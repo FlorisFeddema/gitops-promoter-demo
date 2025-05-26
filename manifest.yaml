@@ -43,7 +43,7 @@ metadata:
   name: staging-demo
   namespace: staging
 spec:
-  replicas: 1
+  replicas: 2
   selector:
     matchLabels:
       app.kubernetes.io/instance: staging
@@ -90,7 +90,7 @@ metadata:
   namespace: staging
 spec:
   hostnames:
-    - iska.feddema.dev
+    - staging.feddema.dev
   parentRefs:
     - name: envoy-gateway-public
       namespace: envoy-gateway
