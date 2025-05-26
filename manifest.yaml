@@ -2,22 +2,22 @@ apiVersion: v1
 kind: Namespace
 metadata:
   annotations:
-    argocd.argoproj.io/tracking-id: dry-source:/Namespace:/dry-source
-  name: dry-source
+    argocd.argoproj.io/tracking-id: development:/Namespace:/development
+  name: development
 ---
 apiVersion: v1
 kind: Service
 metadata:
   annotations:
-    argocd.argoproj.io/tracking-id: dry-source:/Service:dry-source/dry-source-demo
+    argocd.argoproj.io/tracking-id: development:/Service:development/development-demo
   labels:
-    app.kubernetes.io/instance: dry-source
+    app.kubernetes.io/instance: development
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/name: demo
     app.kubernetes.io/version: 1.16.0
     helm.sh/chart: demo-0.1.0
-  name: dry-source-demo
-  namespace: dry-source
+  name: development-demo
+  namespace: development
 spec:
   ports:
     - name: http
@@ -25,7 +25,7 @@ spec:
       protocol: TCP
       targetPort: http
   selector:
-    app.kubernetes.io/instance: dry-source
+    app.kubernetes.io/instance: development
     app.kubernetes.io/name: demo
   type: ClusterIP
 ---
@@ -33,25 +33,25 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   annotations:
-    argocd.argoproj.io/tracking-id: dry-source:apps/Deployment:dry-source/dry-source-demo
+    argocd.argoproj.io/tracking-id: development:apps/Deployment:development/development-demo
   labels:
-    app.kubernetes.io/instance: dry-source
+    app.kubernetes.io/instance: development
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/name: demo
     app.kubernetes.io/version: 1.16.0
     helm.sh/chart: demo-0.1.0
-  name: dry-source-demo
-  namespace: dry-source
+  name: development-demo
+  namespace: development
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app.kubernetes.io/instance: dry-source
+      app.kubernetes.io/instance: development
       app.kubernetes.io/name: demo
   template:
     metadata:
       labels:
-        app.kubernetes.io/instance: dry-source
+        app.kubernetes.io/instance: development
         app.kubernetes.io/managed-by: Helm
         app.kubernetes.io/name: demo
         app.kubernetes.io/version: 1.16.0
@@ -73,3 +73,10 @@ spec:
             httpGet:
               path: /
               port: http
+          resources:
+            limits:
+              cpu: 200m
+              memory: 256Mi
+            requests:
+              cpu: 100m
+              memory: 128Mi
