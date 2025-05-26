@@ -16,6 +16,5 @@ resources:
 
 htmlContent: |
   <html>
-    <head><title>Hello from the base chart!</title></head>
-    <body><h1>It works!</h1></body>
+    <body><h1>Hello from the base chart!</h1></body>
   </html>
