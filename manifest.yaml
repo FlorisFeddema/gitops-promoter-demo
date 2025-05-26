@@ -2,14 +2,14 @@ apiVersion: v1
 kind: Namespace
 metadata:
   annotations:
-    argocd.argoproj.io/tracking-id: dry-source:/Namespace:/argocd
-  name: argocd
+    argocd.argoproj.io/tracking-id: dry-source:/Namespace:/dry-source
+  name: dry-source
 ---
 apiVersion: v1
 kind: Service
 metadata:
   annotations:
-    argocd.argoproj.io/tracking-id: dry-source:/Service:/dry-source-demo
+    argocd.argoproj.io/tracking-id: dry-source:/Service:dry-source/dry-source-demo
   labels:
     app.kubernetes.io/instance: dry-source
     app.kubernetes.io/managed-by: Helm
@@ -17,6 +17,7 @@ metadata:
     app.kubernetes.io/version: 1.16.0
     helm.sh/chart: demo-0.1.0
   name: dry-source-demo
+  namespace: dry-source
 spec:
   ports:
     - name: http
@@ -32,7 +33,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   annotations:
-    argocd.argoproj.io/tracking-id: dry-source:apps/Deployment:/dry-source-demo
+    argocd.argoproj.io/tracking-id: dry-source:apps/Deployment:dry-source/dry-source-demo
   labels:
     app.kubernetes.io/instance: dry-source
     app.kubernetes.io/managed-by: Helm
@@ -40,6 +41,7 @@ metadata:
     app.kubernetes.io/version: 1.16.0
     helm.sh/chart: demo-0.1.0
   name: dry-source-demo
+  namespace: dry-source
 spec:
   replicas: 1
   selector:
