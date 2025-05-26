@@ -6,6 +6,20 @@ metadata:
   name: development
 ---
 apiVersion: v1
+data:
+  index.html: |-
+    <html>
+      <head><title>Hello from development!</title></head>
+      <body><h1>It works!</h1></body>
+    </html>
+kind: ConfigMap
+metadata:
+  annotations:
+    argocd.argoproj.io/tracking-id: development:/ConfigMap:development/development-demo-html
+  name: development-demo-html
+  namespace: development
+---
+apiVersion: v1
 kind: Service
 metadata:
   annotations:
@@ -80,6 +94,13 @@ spec:
             requests:
               cpu: 100m
               memory: 128Mi
+          volumeMounts:
+            - mountPath: /usr/share/nginx/html
+              name: html-volume
+      volumes:
+        - configMap:
+            name: development-demo-html
+          name: html-volume
 ---
 apiVersion: gateway.networking.k8s.io/v1
 kind: HTTPRoute
