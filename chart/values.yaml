@@ -1,0 +1,16 @@
+replicaCount: 1
+hostname: iska.feddema.dev
+
+image:
+  repository: nginx
+  pullPolicy: IfNotPresent
+  tag: ""
+
+resources:
+    requests:
+        cpu: 100m
+        memory: 128Mi
+    limits:
+        cpu: 200m
+        memory: 256Mi
+
