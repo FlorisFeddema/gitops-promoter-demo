@@ -1,3 +1,9 @@
 demo:
   replicaCount: 1
   hostname: dev.feddema.dev
+
+  htmlContent: |
+    <html>
+      <head><title>Hello from development!</title></head>
+      <body><h1>It works!</h1></body>
+    </html>

@@ -14,3 +14,8 @@ resources:
         cpu: 200m
         memory: 256Mi
 
+htmlContent: |
+  <html>
+    <head><title>Hello from the base chart!</title></head>
+    <body><h1>It works!</h1></body>
+  </html>

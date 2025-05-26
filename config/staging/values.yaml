@@ -1,3 +1,9 @@
 demo:
   replicaCount: 2
   hostname: staging.feddema.dev
+
+  htmlContent: |
+    <html>
+      <head><title>Hello from staging!</title></head>
+      <body><h1>It works!</h1></body>
+    </html>

@@ -15,6 +15,10 @@ spec:
       labels:
         {{- include "demo.labels" . | nindent 8 }}
     spec:
+      volumes:
+        - name: html-volume
+          configMap:
+            name: {{ include "demo.fullname" . }}-html
       containers:
         - name: {{ .Chart.Name }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
@@ -23,6 +27,9 @@ spec:
             - name: http
               containerPort: 80
               protocol: TCP
+          volumeMounts:
+            - name: html-volume
+              mountPath: /usr/share/nginx/html
           livenessProbe:
             httpGet:
               path: /
