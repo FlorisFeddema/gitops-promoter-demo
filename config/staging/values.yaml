@@ -1,2 +1,3 @@
-replicaCount: 2
-hostname: staging.feddema.dev
+demo:
+  replicaCount: 2
+  hostname: staging.feddema.dev
