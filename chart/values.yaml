@@ -1,9 +1,0 @@
-replicaCount: 1
-
-image:
-  repository: nginx
-  pullPolicy: IfNotPresent
-  tag: ""
-
-resources: {}
-
