@@ -90,7 +90,7 @@ metadata:
   namespace: development
 spec:
   hostnames:
-    - iska.feddema.dev
+    - dev.feddema.dev
   parentRefs:
     - name: envoy-gateway-public
       namespace: envoy-gateway
