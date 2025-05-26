@@ -1,8 +1,0 @@
-apiVersion: v2
-name: staging
-version: 0.1.0
-
-dependencies:
-  - name: demo
-    repository: file://../../chart
-    version: 0.1.0
