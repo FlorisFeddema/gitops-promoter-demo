@@ -4,5 +4,5 @@ version: 0.1.0
 
 dependencies:
   - name: demo
-    repository: file://../demo
+    repository: file://../../chart
     version: 0.1.0
