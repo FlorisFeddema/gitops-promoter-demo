@@ -80,3 +80,22 @@ spec:
             requests:
               cpu: 100m
               memory: 128Mi
+---
+apiVersion: gateway.networking.k8s.io/v1
+kind: HTTPRoute
+metadata:
+  annotations:
+    argocd.argoproj.io/tracking-id: development:gateway.networking.k8s.io/HTTPRoute:development/development-demo
+  name: development-demo
+  namespace: development
+spec:
+  hostnames:
+    - iska.feddema.dev
+  parentRefs:
+    - name: envoy-gateway-public
+      namespace: envoy-gateway
+      sectionName: web-https
+  rules:
+    - backendRefs:
+        - name: development-demo
+          port: 80
