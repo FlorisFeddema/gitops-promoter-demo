@@ -110,7 +110,7 @@ metadata:
   namespace: development
 spec:
   hostnames:
-    - dev.feddema.dev
+    - null
   parentRefs:
     - name: envoy-gateway-public
       namespace: envoy-gateway
