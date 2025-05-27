@@ -9,8 +9,7 @@ apiVersion: v1
 data:
   index.html: |-
     <html>
-      <head><title>Hello from staging!</title></head>
-      <body><h1>It works!</h1></body>
+      <body><h1>Hello from staging!</h1></body>
     </html>
 kind: ConfigMap
 metadata:
