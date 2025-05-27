@@ -1,5 +1,9 @@
 replicaCount: 1
-hostname: iska.feddema.dev
+
+hostname: ''
+environment: ''
+region: ''
+domain: feddema.dev
 
 image:
   repository: nginx

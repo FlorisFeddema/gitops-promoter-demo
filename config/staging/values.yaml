@@ -1,6 +1,7 @@
 demo:
   replicaCount: 2
-  hostname: staging.feddema.dev
+  environment: staging
+  region: weu
 
   htmlContent: |
     <html>

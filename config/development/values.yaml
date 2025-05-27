@@ -1,6 +1,7 @@
 demo:
   replicaCount: 1
-  hostname: dev.feddema.dev
+  environment: development
+  region: weu
 
   htmlContent: |
     <html>
