@@ -9,7 +9,7 @@ spec:
       namespace: envoy-gateway
       sectionName: web-https
   hostnames:
-    - {{ .Values.hostname }}
+    - {{ include "demo.hostname"}}
   rules:
     - backendRefs:
         - name: {{ include "demo.fullname" . }}

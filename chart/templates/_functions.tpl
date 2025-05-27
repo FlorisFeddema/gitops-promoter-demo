@@ -1,4 +1,4 @@
-{{- define "hostname" -}}
+{{- define "demo.hostname" -}}
 {{- if .Values.hostname }}
 {{- printf .Values.hostname }}
 {{- else }}
