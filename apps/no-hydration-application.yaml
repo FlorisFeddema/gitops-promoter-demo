@@ -1,0 +1,16 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: no-hydration
+  namespace: argocd
+spec:
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: no-hydration
+  project: default
+  source:
+    repoURL: https://github.com/FlorisFeddema/gitops-promoter-demo.git
+    path: config/no-hydration
+    targetRevision: HEAD
+  syncPolicy:
+    automated: {}
