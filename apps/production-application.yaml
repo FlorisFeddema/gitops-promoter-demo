@@ -1,0 +1,22 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: production
+  namespace: argocd
+spec:
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: production
+  project: default
+  sourceHydrator:
+    drySource:
+      repoURL: https://github.com/FlorisFeddema/gitops-promoter-demo.git
+      path: config/production
+      targetRevision: HEAD
+    syncSource:
+      path: .
+      targetBranch: environments/production
+    hydrateTo:
+      targetBranch: environments/production-next
+  syncPolicy:
+    automated: {}
