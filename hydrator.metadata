@@ -1,6 +1,6 @@
 {
   "repoURL": "https://github.com/FlorisFeddema/gitops-promoter-demo.git",
-  "drySha": "c8d41294825de8d7b72f5aa983451354779b7707",
+  "drySha": "0264b4e5d5966df7aceaa1b800506ebb620c933d",
   "commands": [
     "helm template . --name-template staging --include-crds"
   ]
