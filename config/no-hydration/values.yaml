@@ -2,7 +2,7 @@ demo:
   replicaCount: 1
   hostname: no-hydration.feddema.dev
 
-  htmlContent: |
+  appContent: |
     <html>
       <body><h1>Hello from no-hydration!</h1></body>
     </html>
