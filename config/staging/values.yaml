@@ -4,6 +4,7 @@ demo:
   region: weu
 
   appContent: |
-    <html>
-      <body><h1>Hello from staging!</h1></body>
-    </html>
+    def main():
+        print("Hello from staging!")
+    if __name__ == "__main__":
+        main()
