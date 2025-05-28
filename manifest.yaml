@@ -8,9 +8,10 @@ metadata:
 apiVersion: v1
 data:
   index.html: |-
-    <html>
-      <body><h1>Hello from the base chart!</h1></body>
-    </html>
+    def main():
+        print("Hello from staging!")
+    if __name__ == "__main__":
+        main()
 kind: ConfigMap
 metadata:
   annotations:
