@@ -8,9 +8,10 @@ metadata:
 apiVersion: v1
 data:
   index.html: |-
-    <html>
-      <body><h1>Hello from the base chart!</h1></body>
-    </html>
+    def main():
+        print("Hello from staging!")
+    if __name__ == "__main__":
+        main()
 kind: ConfigMap
 metadata:
   annotations:
@@ -71,7 +72,7 @@ spec:
         helm.sh/chart: demo-0.1.0
     spec:
       containers:
-        - image: nginx:1.16.0
+        - image: nginx:1.27.5
           imagePullPolicy: IfNotPresent
           livenessProbe:
             httpGet:
