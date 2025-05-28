@@ -7,6 +7,6 @@ To hydrate the manifests in this repository, run the following commands:
 
 git clone https://github.com/FlorisFeddema/gitops-promoter-demo.git
 # cd into the cloned directory
-git checkout 49d5208185b1066d08b9ba66fb34e380b65da6df
+git checkout 05dcd4f4c73e18614b5aa20ad2da8f2e302efe07
 helm template . --name-template production --include-crds
 ```
