@@ -3,7 +3,7 @@ demo:
   environment: staging
   region: weu
 
-  htmlContent: |
+  appContent: |
     <html>
       <body><h1>Hello from staging!</h1></body>
     </html>

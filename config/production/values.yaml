@@ -2,7 +2,7 @@ demo:
   replicaCount: 3
   hostname: production.feddema.dev
 
-  htmlContent: |
+  appContent: |
     <html>
       <body><h1>Hello from production!</h1></body>
     </html>

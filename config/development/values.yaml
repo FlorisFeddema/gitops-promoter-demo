@@ -3,7 +3,7 @@ demo:
   environment: development
   region: weu
 
-  htmlContent: |
+  appContent: |
     <html>
       <body><h1>Hello from development!</h1></body>
     </html>

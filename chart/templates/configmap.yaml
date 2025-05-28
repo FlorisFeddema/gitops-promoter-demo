@@ -5,4 +5,4 @@ metadata:
   namespace: {{ .Release.Name }}
 data:
   index.html: |-
-{{ .Values.htmlContent | indent 4 }}
+{{ .Values.appContent | indent 4 }}
