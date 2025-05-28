@@ -18,7 +18,7 @@ resources:
         cpu: 200m
         memory: 256Mi
 
-htmlContent: |
+appContent: |
   <html>
     <body><h1>Hello from the base chart!</h1></body>
   </html>
