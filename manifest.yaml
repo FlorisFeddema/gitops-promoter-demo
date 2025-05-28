@@ -72,7 +72,7 @@ spec:
         helm.sh/chart: demo-0.1.0
     spec:
       containers:
-        - image: nginx:1.16.0
+        - image: nginx:1.27.5
           imagePullPolicy: IfNotPresent
           livenessProbe:
             httpGet:
