@@ -2,9 +2,3 @@ demo:
   replicaCount: 2
   environment: staging
   region: weu
-
-  appContent: |
-    def main():
-        print("Hello from staging!")
-    if __name__ == "__main__":
-        main()
